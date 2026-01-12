@@ -9,7 +9,7 @@ export default function ProcessPage() {
         <>
             <PageHero
                 title="Our Process"
-                subtitle="A proven, transparent methodology that guarantees high-quality results at scale."
+                subtitle="A proven, transparent methodology that guarantees high quality results at scale."
             />
             <Process />
             <CTA />

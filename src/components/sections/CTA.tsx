@@ -57,7 +57,7 @@ export function CTA() {
                                 transition={{ delay: 0.2 }}
                                 className="text-xl text-slate-400 mb-12 max-w-xl leading-relaxed"
                             >
-                                Transform your digital infrastructure with the UK's leading experts in cloud-native software engineering.
+                                Transform your digital infrastructure with the UK's leading experts in cloud native software engineering.
                             </motion.p>
 
                             <motion.div

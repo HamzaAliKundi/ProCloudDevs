@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { Cloud, ArrowRight, Sparkles } from 'lucide-react';
+import { Cloud, ArrowRight, Sparkles, ShieldCheck } from 'lucide-react';
 import { TechCanvas } from '@/components/ui/TechCanvas';
 
 export function Hero() {
@@ -55,9 +55,9 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-                    className="text-xl md:text-3xl text-muted-foreground max-w-3xl mb-16 leading-relaxed font-medium"
+                    className="text-xl md:text-3xl text-muted-foreground max-w-3xl mb-12 leading-relaxed font-medium"
                 >
-                    We build high-performance cloud architectures and bespoke web ecosystems for industry leaders.
+                    We Won’t Be Beaten on Price or Quality. From startups to global companies, we guarantee to deliver premium websites and apps while saving you money.
                 </motion.p>
 
                 <motion.div
@@ -66,14 +66,14 @@ export function Hero() {
                     transition={{ duration: 1, ease: "easeOut", delay: 0.6 }}
                     className="flex flex-col sm:flex-row gap-8 w-full sm:w-auto mb-24"
                 >
-                    <Link href="/contact">
-                        <Button size="lg" className="group text-xl px-12">
-                            Talk to an Expert
+                    <Link href="/contact" className="w-full sm:w-auto">
+                        <Button size="lg" className="w-full group text-xl px-12">
+                            Start Your Project
                             <ArrowRight size={24} className="ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                         </Button>
                     </Link>
-                    <Link href="/services">
-                        <Button variant="outline" size="lg" className="text-xl px-12 glass">
+                    <Link href="/services" className="w-full sm:w-auto">
+                        <Button variant="outline" size="lg" className="w-full text-xl px-12 glass">
                             Our Services
                         </Button>
                     </Link>
@@ -90,11 +90,11 @@ export function Hero() {
                     <TechCanvas />
                     <div className="absolute bottom-12 left-12 z-20 hidden md:flex items-center gap-4 glass p-6 rounded-3xl border-white/10 group-hover:translate-y--2 transition-all duration-500 shadow-2xl">
                         <div className="w-12 h-12 bg-primary/20 rounded-2xl flex items-center justify-center">
-                            <Cloud className="text-primary animate-pulse" size={28} />
+                            <ShieldCheck className="text-primary animate-pulse" size={28} />
                         </div>
                         <div className="text-left">
-                            <span className="block text-xs font-black uppercase tracking-[0.2em] text-primary mb-1">Infrastructure</span>
-                            <span className="text-lg font-bold">ProCloud Core Framework</span>
+                            <span className="block text-xs font-black uppercase tracking-[0.2em] text-primary mb-1">Guaranteed</span>
+                            <span className="text-lg font-bold">Best Price & Quality</span>
                         </div>
                     </div>
                 </motion.div>

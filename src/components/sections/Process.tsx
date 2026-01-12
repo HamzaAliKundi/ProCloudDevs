@@ -16,12 +16,12 @@ const steps = [
     },
     {
         title: "Agile Development",
-        desc: "Sprint-based development with regular updates and high-quality code standards.",
+        desc: "Sprint based development with regular updates and high quality code standards.",
         icon: <Terminal className="w-8 h-8" />,
     },
     {
         title: "Quality Assurance",
-        desc: "Rigorous testing across all devices to ensure a bug-free and smooth experience.",
+        desc: "Rigorous testing across all devices to ensure a smooth experience without bugs.",
         icon: <ShieldCheck className="w-8 h-8" />,
     },
     {
@@ -38,7 +38,7 @@ export function Process() {
                 <div className="text-center mb-24">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Working <span className="text-primary italic">Process</span></h2>
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        A transparent and proven methodology for delivering enterprise-grade software.
+                        A transparent and proven methodology for delivering enterprise grade software.
                     </p>
                 </div>
 

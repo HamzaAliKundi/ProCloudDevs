@@ -3,50 +3,36 @@
 import { motion } from 'framer-motion';
 import { Card } from '@/components/ui/Card';
 import {
-    Users,
-    Layers,
-    Terminal,
-    MessageSquare,
-    Clock,
-    ShieldCheck
+    Home,
+    Rotate3d,
+    LineChart,
+    HeartHandshake
 } from 'lucide-react';
 
 const reasons = [
     {
-        title: "UK-Based Team",
-        desc: "Direct communication with our London-based engineers and architects.",
-        icon: <Users size={32} />,
+        title: "One Roof Solution",
+        desc: "All website styles and technologies under one roof. From WordPress to custom apps.",
+        icon: <Home size={32} />,
         color: "text-blue-500",
     },
     {
-        title: "Scalable Architecture",
-        desc: "We build systems that grow from 1,000 to 1,000,000+ users seamlessly.",
-        icon: <Layers size={32} />,
+        title: "Bespoke Customization",
+        desc: "Custom solutions, never one size fits all. We tailor every project to your unique vision.",
+        icon: <Rotate3d size={32} />,
         color: "text-cyan-500",
     },
     {
-        title: "Clean & Maintainable Code",
-        desc: "Future-proof development following industry best practices and SOLID principles.",
-        icon: <Terminal size={32} />,
+        title: "Results Driven",
+        desc: "Results driven design and development built with your specific business goals in mind.",
+        icon: <LineChart size={32} />,
         color: "text-purple-500",
     },
     {
-        title: "Transparent Communication",
-        desc: "Real-time updates via Slack, Jira, and weekly syncs. No hidden surprises.",
-        icon: <MessageSquare size={32} />,
+        title: "Reliable Support",
+        desc: "Dedicated support before and after launch to ensure your digital foundation remains strong.",
+        icon: <HeartHandshake size={32} />,
         color: "text-indigo-500",
-    },
-    {
-        title: "On-Time Delivery",
-        desc: "Agile workflows designed to meet strict deadlines without compromising quality.",
-        icon: <Clock size={32} />,
-        color: "text-emerald-500",
-    },
-    {
-        title: "Secure by Design",
-        desc: "Leading security practices integrated into every line of code we write.",
-        icon: <ShieldCheck size={32} />,
-        color: "text-rose-500",
     },
 ];
 
@@ -70,7 +56,7 @@ export function WhyChooseUs() {
                             viewport={{ once: true }}
                             className="text-5xl md:text-7xl font-black leading-tight tracking-tighter"
                         >
-                            Why the World’s Best <br /> Startups <span className="text-secondary italic">Choose Us</span>
+                            Why Businesses <br /> <span className="text-secondary italic">Choose Us</span>
                         </motion.h2>
                     </div>
                     <motion.p
@@ -79,11 +65,11 @@ export function WhyChooseUs() {
                         viewport={{ once: true }}
                         className="text-muted-foreground text-xl max-w-md pb-4"
                     >
-                        We combine UK engineering precision with global scalability standards.
+                        We don’t just build websites, we build digital foundations that help brands stand out, scale, and succeed online.
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {reasons.map((reason, index) => (
                         <Card key={reason.title} delay={index * 0.1} withGlow={false} className="bg-background/50 backdrop-blur-md border-border/50 group h-full">
                             <div className={`mb-6 ${reason.color} group-hover:scale-110 transition-transform duration-500`}>

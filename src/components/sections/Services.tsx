@@ -6,63 +6,49 @@ import { Card } from '@/components/ui/Card';
 import { cn } from '@/lib/utils';
 import {
     Code2,
-    Database,
     Smartphone,
     Globe,
-    Layers,
     ShoppingCart,
-    Settings,
-    Server
+    Search,
+    Headset
 } from 'lucide-react';
 
 const services = [
     {
-        title: "MERN Stack Development",
-        desc: "Robust full-stack web applications built with React, Node.js, Express, and MongoDB.",
+        title: "Custom Full Stack Websites",
+        desc: "We build fully custom websites from the ground up using modern technologies. Our full stack solutions are fast, secure, scalable, and tailored exactly to your business needs : no templates, no limitations.",
         icon: <Code2 />,
         color: "bg-blue-500/10 text-blue-500",
     },
     {
-        title: "PostgreSQL & SQL Design",
-        desc: "Optimized relational database systems designed for complex data and high security.",
-        icon: <Database />,
-        color: "bg-cyan-500/10 text-cyan-500",
-    },
-    {
-        title: "React Native Apps",
-        desc: "High-performance cross-platform mobile apps for iOS and Android with a single codebase.",
+        title: "Custom Web & Mobile Apps",
+        desc: "From idea to launch, we design and develop powerful custom applications built for performance, usability, and growth. Whether it’s a web app, mobile app, or internal system, we turn complex ideas into smooth digital experiences.",
         icon: <Smartphone />,
         color: "bg-indigo-500/10 text-indigo-500",
     },
     {
-        title: "Flutter Development",
-        desc: "Beautifully native-compiled mobile and web applications with seamless UX.",
-        icon: <Layers />,
-        color: "bg-purple-500/10 text-purple-500",
-    },
-    {
-        title: ".NET Core / APIs",
-        desc: "Scalable enterprise-grade backends and high-performance Web APIs.",
-        icon: <Server />,
-        color: "bg-violet-500/10 text-violet-500",
-    },
-    {
-        title: "WordPress Development",
-        desc: "Custom-designed, highly functional, and easy-to-manage WordPress solutions.",
-        icon: <Globe />,
-        color: "bg-blue-600/10 text-blue-600",
-    },
-    {
-        title: "Shopify E-commerce",
-        desc: "Bespoke e-commerce storefronts optimized for conversions and growth.",
+        title: "Shopify Development",
+        desc: "We create high converting Shopify stores that are easy to manage and built to sell. From custom themes to advanced integrations, we help you launch and scale your e-commerce business with confidence.",
         icon: <ShoppingCart />,
         color: "bg-emerald-500/10 text-emerald-500",
     },
     {
-        title: "Cloud & API Integrations",
-        desc: "Seamlessly connecting your platforms with AWS, Azure, and third-party services.",
-        icon: <Settings />,
-        color: "bg-teal-500/10 text-teal-500",
+        title: "WordPress Websites",
+        desc: "Perfect for businesses that want flexibility and control. We design and develop professional WordPress websites that are visually impressive, SEO friendly, and simple to update.",
+        icon: <Globe />,
+        color: "bg-primary/10 text-primary",
+    },
+    {
+        title: "SEO Optimization",
+        desc: "A great website is useless if no one can find it. Our SEO services help improve your search engine rankings, increase organic traffic, and attract the right customers through proven strategies.",
+        icon: <Search />,
+        color: "bg-accent/10 text-accent",
+    },
+    {
+        title: "Live Support Agents",
+        desc: "Our live support agents are available to assist your customers in real time. From handling inquiries to providing technical support, we help improve customer experience and build trust with your audience.",
+        icon: <Headset />,
+        color: "bg-secondary/10 text-secondary",
     },
 ];
 
@@ -77,24 +63,24 @@ export function Services() {
                         viewport={{ once: true }}
                         className="text-primary font-black uppercase tracking-[0.3em] text-sm mb-6"
                     >
-                        Our Expertise
+                        Services We Offer
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-5xl md:text-7xl font-black mb-8 leading-tight"
+                        className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tighter"
                     >
-                        High-Performance <br /> <span className="text-primary italic">Digital Engineering</span>
+                        High Performance <br /> <span className="text-primary italic">Digital Solutions</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-muted-foreground text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed"
+                        className="text-muted-foreground text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed"
                     >
-                        We don't just build websites; we engineer scalable ecosystems that drive business growth.
+                        We provide a complete range of web and digital solutions designed to meet businesses at every stage : from startups to established brands.
                     </motion.p>
                 </div>
 

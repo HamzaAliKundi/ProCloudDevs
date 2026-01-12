@@ -10,7 +10,7 @@ export default function AboutPage() {
         <>
             <PageHero
                 title="About ProCloudDevs"
-                subtitle="A mission-driven UK agency building the future of digital infrastructure."
+                subtitle="We build digital foundations that help brands stand out, scale, and succeed online."
             />
             <About />
             <WhyChooseUs />

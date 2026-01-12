@@ -10,7 +10,7 @@ export default function ServicesPage() {
         <>
             <PageHero
                 title="Our Services"
-                subtitle="Bespoke engineering solutions tailored for scale, performance, and security."
+                subtitle="Complete digital solutions designed to help your business grow online through speed, security, and scalability."
             />
             <Services />
             <TechStack />

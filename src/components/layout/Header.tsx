@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Cloud } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { Logo } from '@/components/ui/Logo';
 import { cn } from '@/lib/utils';
 
 export function Header() {
@@ -34,13 +35,8 @@ export function Header() {
             )}
         >
             <nav className="max-w-7xl mx-auto flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-3 group">
-                    <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-white shadow-[0_8px_30px_rgb(37,99,235,0.3)] group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                        <Cloud size={28} />
-                    </div>
-                    <span className="text-2xl font-black tracking-tighter text-foreground">
-                        ProCloud<span className="text-primary tracking-normal">Devs</span>
-                    </span>
+                <Link href="/">
+                    <Logo />
                 </Link>
 
                 {/* Desktop Nav */}
