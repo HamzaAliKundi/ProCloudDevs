@@ -11,7 +11,13 @@ export function FloatingCode() {
     ];
 
     return (
-        <div className="relative h-64 w-full flex items-center justify-center perspective-[1000px]">
+        <div className="relative h-64 w-full flex items-center justify-center perspective-[1000px] overflow-hidden">
+            <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center space-y-2">
+                    <div className="text-4xl font-black text-primary/20 mb-2">{"</>"}</div>
+                    <p className="text-sm font-bold text-muted-foreground">Code Excellence</p>
+                </div>
+            </div>
             {codeLines.map((line, i) => (
                 <motion.div
                     key={i}
@@ -19,7 +25,7 @@ export function FloatingCode() {
                         y: [0, -20, 0],
                         rotateY: [10, -10, 10],
                         rotateX: [5, -5, 5],
-                        opacity: [0.4, 0.8, 0.4],
+                        opacity: [0.5, 0.9, 0.5],
                     }}
                     transition={{
                         duration: 5 + i,

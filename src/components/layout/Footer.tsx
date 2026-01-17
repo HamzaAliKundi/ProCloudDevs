@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, MapPin } from 'lucide-react';
 import { Logo } from '@/components/ui/Logo';
 
 export function Footer() {
@@ -16,13 +16,13 @@ export function Footer() {
                         UK based software development agency specializing in scalable cloud architecture and premium web solutions for modern businesses.
                     </p>
                     <div className="flex gap-4">
-                        <a href="#" className="p-2 bg-background rounded-lg hover:text-primary transition-colors border border-border">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-background rounded-lg hover:text-primary transition-colors border border-border">
                             <Github size={20} />
                         </a>
-                        <a href="#" className="p-2 bg-background rounded-lg hover:text-primary transition-colors border border-border">
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-background rounded-lg hover:text-primary transition-colors border border-border">
                             <Twitter size={20} />
                         </a>
-                        <a href="#" className="p-2 bg-background rounded-lg hover:text-primary transition-colors border border-border">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="p-2 bg-background rounded-lg hover:text-primary transition-colors border border-border">
                             <Linkedin size={20} />
                         </a>
                     </div>
@@ -44,9 +44,8 @@ export function Footer() {
                     <ul className="space-y-4 text-sm text-muted-foreground">
                         <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
                         <li><Link href="/process" className="hover:text-primary transition-colors">Our Process</Link></li>
-                        <li><Link href="#" className="hover:text-primary transition-colors">Case Studies</Link></li>
                         <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-                        <li><Link href="#" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+                        <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
                     </ul>
                 </div>
 
@@ -55,11 +54,7 @@ export function Footer() {
                     <ul className="space-y-4 text-sm text-muted-foreground">
                         <li className="flex items-start gap-3">
                             <MapPin size={18} className="text-primary shrink-0" />
-                            <span>London, United Kingdom</span>
-                        </li>
-                        <li className="flex items-center gap-3">
-                            <Phone size={18} className="text-primary shrink-0" />
-                            <span>+44 (0) 20 1234 5678</span>
+                            <span>Manchester, United Kingdom</span>
                         </li>
                         <li className="flex items-center gap-3">
                             <Mail size={18} className="text-primary shrink-0" />
@@ -74,8 +69,8 @@ export function Footer() {
                     © {currentYear} ProCloudDevs. All rights reserved. Registered in England & Wales.
                 </div>
                 <div className="flex gap-8">
-                    <Link href="#" className="hover:text-foreground">Terms of Service</Link>
-                    <Link href="#" className="hover:text-foreground">Cookie Policy</Link>
+                    <Link href="/terms-of-service" className="hover:text-foreground">Terms of Service</Link>
+                    <Link href="/cookie-policy" className="hover:text-foreground">Cookie Policy</Link>
                 </div>
             </div>
         </footer>

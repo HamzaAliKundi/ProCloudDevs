@@ -1,27 +1,41 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { ArrowRight, Zap, Globe, Shield } from 'lucide-react';
 
 export function CTA() {
     return (
-        <section className="section-padding relative overflow-hidden">
-            {/* Background with ultra-modern gradient and mesh */}
+        <section className="section-padding relative overflow-hidden bg-background">
+            {/* Background with subtle gradients matching other sections */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-[#020617]" />
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_-20%,#3b82f633,transparent_70%)]" />
-                <div className="absolute bottom-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_120%,#8b5cf633,transparent_70%)]" />
-                <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'url("https://www.transparenttextures.com/patterns/carbon-fibre.png")' }} />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.1, 1],
+                        rotate: [0, 3, 0],
+                    }}
+                    transition={{ duration: 20, repeat: Infinity }}
+                    className="absolute -top-[10%] -left-[5%] h-[50%] w-[50%] rounded-full bg-primary/10 blur-[100px]"
+                />
+                <motion.div
+                    animate={{
+                        scale: [1, 1.2, 1],
+                        rotate: [0, -3, 0],
+                    }}
+                    transition={{ duration: 25, repeat: Infinity }}
+                    className="absolute bottom-[10%] -right-[5%] h-[50%] w-[50%] rounded-full bg-accent/10 blur-[120px]"
+                />
+                <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="glass rounded-[3rem] p-12 md:p-24 border border-white/10 overflow-hidden relative group">
-                    {/* Animated glow that follows mouse or just stays animated */}
+                <div className="glass rounded-[3rem] p-12 md:p-24 border border-border overflow-hidden relative group">
+                    {/* Animated glow */}
                     <motion.div
                         animate={{
                             scale: [1, 1.2, 1],
-                            opacity: [0.3, 0.5, 0.3],
+                            opacity: [0.2, 0.4, 0.2],
                         }}
                         transition={{ duration: 8, repeat: Infinity }}
                         className="absolute -top-24 -right-24 w-96 h-96 bg-primary/20 blur-[100px] rounded-full"
@@ -44,9 +58,9 @@ export function CTA() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.1 }}
-                                className="text-5xl md:text-7xl font-black text-white mb-8 leading-[1.1] tracking-tighter"
+                                className="text-5xl md:text-7xl font-black text-foreground mb-8 leading-[1.1] tracking-tighter"
                             >
-                                Let’s Build Something <br />
+                                Let's Build Something <br />
                                 <span className="gradient-text italic font-black">Truly Scalable</span> Together
                             </motion.h2>
 
@@ -55,7 +69,7 @@ export function CTA() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: 0.2 }}
-                                className="text-xl text-slate-400 mb-12 max-w-xl leading-relaxed"
+                                className="text-xl text-muted-foreground mb-12 max-w-xl leading-relaxed"
                             >
                                 Transform your digital infrastructure with the UK's leading experts in cloud native software engineering.
                             </motion.p>
@@ -67,13 +81,17 @@ export function CTA() {
                                 transition={{ delay: 0.3 }}
                                 className="flex flex-col sm:flex-row gap-6"
                             >
-                                <Button size="lg" className="px-12 py-6 text-xl shadow-[0_20px_40px_rgba(37,99,235,0.4)] group">
-                                    Start Your Project
-                                    <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
-                                </Button>
-                                <Button variant="glass" size="lg" className="px-12 py-6 text-xl border-white/10 hover:bg-white/5">
-                                    Our Process
-                                </Button>
+                                <Link href="/contact">
+                                    <Button size="md" className="px-8 shadow-[0_20px_40px_rgba(37,99,235,0.4)] group">
+                                        Start Your Project
+                                        <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
+                                    </Button>
+                                </Link>
+                                <Link href="/process">
+                                    <Button variant="outline" size="md" className="px-8 glass">
+                                        Our Process
+                                    </Button>
+                                </Link>
                             </motion.div>
                         </div>
 
@@ -90,11 +108,11 @@ export function CTA() {
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: 0.4 + i * 0.1 }}
-                                    className="bg-white/5 backdrop-blur-sm border border-white/5 p-8 rounded-3xl hover:bg-white/10 transition-colors"
+                                    className="glass p-8 rounded-3xl border border-border hover:bg-primary/5 transition-colors group/card"
                                 >
-                                    <div className="mb-4">{item.icon}</div>
-                                    <div className="text-white font-bold mb-1">{item.title}</div>
-                                    <div className="text-slate-500 text-sm">{item.desc}</div>
+                                    <div className="mb-4 group-hover/card:scale-110 transition-transform duration-300">{item.icon}</div>
+                                    <div className="text-foreground font-bold mb-1">{item.title}</div>
+                                    <div className="text-muted-foreground text-sm">{item.desc}</div>
                                 </motion.div>
                             ))}
                         </div>

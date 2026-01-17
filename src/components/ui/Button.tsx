@@ -26,7 +26,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         };
 
         const commonClasses = cn(
-            'inline-flex items-center justify-center rounded-2xl font-bold tracking-tight transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]',
+            'inline-flex items-center justify-center rounded-2xl font-bold tracking-tight transition-all duration-300 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] cursor-pointer',
             withShimmer && 'shimmer',
             variants[variant],
             sizes[size],

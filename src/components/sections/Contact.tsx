@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Send } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
 export function Contact() {
@@ -23,17 +23,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <div className="font-bold text-lg mb-1">Our Studio</div>
-                                    <div className="text-muted-foreground">London, EC1A 1BB, United Kingdom</div>
-                                </div>
-                            </div>
-
-                            <div className="flex gap-6 items-start">
-                                <div className="w-12 h-12 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
-                                    <Phone size={24} />
-                                </div>
-                                <div>
-                                    <div className="font-bold text-lg mb-1">Call Us</div>
-                                    <div className="text-muted-foreground">+44 (0) 20 1234 5678</div>
+                                    <div className="text-muted-foreground">Manchester, United Kingdom</div>
                                 </div>
                             </div>
 
@@ -52,7 +42,7 @@ export function Contact() {
                             <div className="absolute inset-0 bg-primary/5 flex items-center justify-center">
                                 <div className="text-center">
                                     <MapPin className="w-8 h-8 text-primary mx-auto mb-2" />
-                                    <p className="text-sm font-bold">London, UK Studio</p>
+                                    <p className="text-sm font-bold">Manchester, UK Studio</p>
                                 </div>
                             </div>
                             <div className="w-full h-full bg-muted/50" />
@@ -104,7 +94,7 @@ export function Contact() {
                                     className="w-full px-4 py-4 rounded-xl bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                                 />
                             </div>
-                            <Button size="lg" className="w-full gap-2 py-6">
+                            <Button size="md" className="w-full gap-2">
                                 Send Message
                                 <Send size={18} />
                             </Button>

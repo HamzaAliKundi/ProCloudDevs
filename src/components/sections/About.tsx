@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { CheckCircle2, Trophy, Users, Heart, Target, Lightbulb, ShieldCheck, HeartHandshake } from 'lucide-react';
-import { FloatingCode } from '@/components/ui/FloatingCode';
+import { CheckCircle2, Trophy, Users, Heart, Target, Lightbulb, ShieldCheck, HeartHandshake, MessageSquare } from 'lucide-react';
 
 const stats = [
     { label: 'High Quality Craftsmanship', value: '100%', icon: <Trophy className="text-secondary" /> },
@@ -22,9 +21,88 @@ export function About() {
                         transition={{ duration: 0.8 }}
                         className="relative"
                     >
-                        <div className="aspect-square rounded-[3rem] overflow-hidden glass p-4 relative flex items-center justify-center">
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
-                            <FloatingCode />
+                        <div className="aspect-square rounded-[3rem] overflow-hidden glass p-8 relative flex items-center justify-center bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10">
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 opacity-50" />
+                            
+                            {/* Animated Text Elements */}
+                            <div className="absolute inset-0 perspective-[1000px]">
+                                {[
+                                    { text: "React", delay: 0, top: "15%", left: "10%" },
+                                    { text: "Next.js", delay: 0.3, top: "25%", right: "15%" },
+                                    { text: "TypeScript", delay: 0.6, top: "40%", left: "8%" },
+                                    { text: "Node.js", delay: 0.9, top: "55%", right: "12%" },
+                                    { text: "Cloud", delay: 1.2, top: "70%", left: "15%" },
+                                    { text: "API", delay: 1.5, top: "80%", right: "10%" },
+                                ].map((item, i) => (
+                                    <motion.div
+                                        key={i}
+                                        animate={{
+                                            y: [0, -15, 0],
+                                            rotateY: [8, -8, 8],
+                                            rotateX: [4, -4, 4],
+                                            opacity: [0.4, 0.8, 0.4],
+                                            scale: [1, 1.05, 1],
+                                        }}
+                                        transition={{
+                                            duration: 4 + i * 0.5,
+                                            repeat: Infinity,
+                                            ease: "easeInOut",
+                                            delay: item.delay,
+                                        }}
+                                        className="absolute glass px-3 py-1.5 rounded-lg text-xs font-bold text-primary border border-primary/20 whitespace-nowrap shadow-lg"
+                                        style={{
+                                            top: item.top,
+                                            left: item.left,
+                                            right: item.right,
+                                            zIndex: 10 - i,
+                                        }}
+                                    >
+                                        {item.text}
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                            {/* Center Content */}
+                            <div className="relative z-10 w-full h-full flex flex-col items-center justify-center space-y-6">
+                                <motion.div
+                                    animate={{
+                                        rotate: [0, 5, -5, 0],
+                                        scale: [1, 1.05, 1],
+                                    }}
+                                    transition={{
+                                        duration: 6,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                    }}
+                                    className="text-6xl md:text-7xl font-black text-primary/30 mb-4"
+                                >
+                                    {"</>"}
+                                </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5 }}
+                                    className="text-center space-y-2"
+                                >
+                                    <h3 className="text-2xl md:text-3xl font-black text-foreground">Code Excellence</h3>
+                                    <p className="text-sm md:text-base text-muted-foreground font-medium">Premium Development</p>
+                                </motion.div>
+                                <motion.div
+                                    animate={{
+                                        scale: [1, 1.1, 1],
+                                    }}
+                                    transition={{
+                                        duration: 2,
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                    }}
+                                    className="flex gap-2 mt-4"
+                                >
+                                    <div className="w-2 h-2 rounded-full bg-primary/40 animate-pulse" style={{ animationDelay: '0s' }} />
+                                    <div className="w-2 h-2 rounded-full bg-secondary/40 animate-pulse" style={{ animationDelay: '0.2s' }} />
+                                    <div className="w-2 h-2 rounded-full bg-accent/40 animate-pulse" style={{ animationDelay: '0.4s' }} />
+                                </motion.div>
+                            </div>
                         </div>
                     </motion.div>
 
@@ -55,7 +133,9 @@ export function About() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
                             {[
                                 'WordPress Websites',
+                                'Shopify Website',
                                 'Custom Web Development',
+                                'Full Custom Coding',
                                 'E-commerce Solutions',
                                 'Web & Mobile Apps',
                                 'UI/UX Design',
@@ -88,6 +168,7 @@ export function About() {
                                 { title: 'High quality craftsmanship', icon: <Trophy className="text-secondary" size={20} /> },
                                 { title: 'Future proof solutions', icon: <Lightbulb className="text-accent" size={20} /> },
                                 { title: 'Honest pricing and timelines', icon: <ShieldCheck className="text-primary" size={20} /> },
+                                { title: 'Best prices Guaranteed', icon: <ShieldCheck className="text-primary" size={20} /> },
                             ].map((point) => (
                                 <div key={point.title} className="flex items-center gap-4 glass p-4 rounded-2xl border-white/5">
                                     {point.icon}
@@ -122,5 +203,3 @@ export function About() {
         </section>
     );
 }
-
-import { MessageSquare } from 'lucide-react';

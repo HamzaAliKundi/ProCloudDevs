@@ -35,7 +35,7 @@ export function Header() {
             )}
         >
             <nav className="max-w-7xl mx-auto flex items-center justify-between">
-                <Link href="/">
+                <Link href="/" className="cursor-pointer">
                     <Logo />
                 </Link>
 
@@ -46,7 +46,7 @@ export function Header() {
                             <li key={link.name}>
                                 <Link
                                     href={link.href}
-                                    className="text-sm font-bold tracking-tight text-muted-foreground hover:text-primary transition-all duration-300 relative group/link"
+                                    className="text-sm font-bold tracking-tight text-muted-foreground hover:text-primary transition-all duration-300 relative group/link cursor-pointer"
                                 >
                                     {link.name}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/link:w-full" />
@@ -54,7 +54,7 @@ export function Header() {
                             </li>
                         ))}
                     </ul>
-                    <Link href="/contact">
+                    <Link href="/contact" className="cursor-pointer">
                         <Button size="sm" className="ml-4">Start Project</Button>
                     </Link>
                 </div>
@@ -87,7 +87,7 @@ export function Header() {
                                 >
                                     <Link
                                         href={link.href}
-                                        className="text-3xl font-black tracking-tight hover:text-primary transition-colors block"
+                                        className="text-3xl font-black tracking-tight hover:text-primary transition-colors block cursor-pointer"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
                                         {link.name}
@@ -100,7 +100,9 @@ export function Header() {
                                 transition={{ delay: 0.4 }}
                                 className="pt-8 border-t border-border"
                             >
-                                <Button className="w-full py-6">Get Consultation</Button>
+                                <Link href="/contact" className="block cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                                    <Button className="w-full">Get Consultation</Button>
+                                </Link>
                             </motion.li>
                         </ul>
                     </motion.div>

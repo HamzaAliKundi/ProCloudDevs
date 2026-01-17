@@ -19,7 +19,7 @@ export function PageHero({ title, subtitle }: PageHeroProps) {
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-6xl md:text-8xl font-black tracking-tight mb-8"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight mb-8 px-4"
                 >
                     {title}
                 </motion.h1>
@@ -27,7 +27,7 @@ export function PageHero({ title, subtitle }: PageHeroProps) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4"
                 >
                     {subtitle}
                 </motion.p>
