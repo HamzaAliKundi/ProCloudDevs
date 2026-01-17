@@ -11,7 +11,7 @@ const stats = [
 
 export function About() {
     return (
-        <section id="about" className="section-padding relative">
+        <section id="about" className="section-padding bg-background relative">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mb-24">
                     <motion.div
@@ -170,7 +170,7 @@ export function About() {
                                 { title: 'Honest pricing and timelines', icon: <ShieldCheck className="text-primary" size={20} /> },
                                 { title: 'Best prices Guaranteed', icon: <ShieldCheck className="text-primary" size={20} /> },
                             ].map((point) => (
-                                <div key={point.title} className="flex items-center gap-4 glass p-4 rounded-2xl border-white/5">
+                                <div key={point.title} className="flex items-center gap-4 glass p-4 rounded-2xl border-border/50">
                                     {point.icon}
                                     <span className="font-bold">{point.title}</span>
                                 </div>
@@ -188,7 +188,7 @@ export function About() {
                                 transition={{ delay: index * 0.1 }}
                                 className="glass p-8 rounded-[2rem] flex items-center gap-8 group hover:bg-primary/5 transition-colors"
                             >
-                                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <div className="w-16 h-16 rounded-2xl bg-muted/50 flex items-center justify-center group-hover:scale-110 transition-transform">
                                     {stat.icon}
                                 </div>
                                 <div>

@@ -30,7 +30,7 @@ const testimonials = [
 
 export function Testimonials() {
     return (
-        <section className="section-padding overflow-hidden">
+        <section className="section-padding bg-background overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 md:px-12">
                 <div className="text-center mb-20">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 italic">Trusted by Visionaries</h2>

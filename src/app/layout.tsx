@@ -3,6 +3,7 @@ import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -26,13 +27,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                // Remove dark class if exists
+                document.documentElement.classList.remove('dark');
+                // Get saved theme or default to light
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  // Ensure light mode is set
+                  document.documentElement.classList.remove('dark');
+                  if (!savedTheme) {
+                    localStorage.setItem('theme', 'light');
+                  }
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${poppins.variable} font-sans antialiased bg-background text-foreground`}
       >
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

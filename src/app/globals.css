@@ -45,18 +45,21 @@
   --font-heading: 'Poppins', var(--font-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #020617;
-    /* Deep Navy Obsidian */
-    --foreground: #f1f5f9;
-    --muted: #0f172a;
-    --muted-foreground: #94a3b8;
-    --border: #1e293b;
-    --card: #0b1120;
-    --card-foreground: #f1f5f9;
-    --grad-surface: linear-gradient(to bottom right, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
-  }
+.dark {
+  --background: #020617;
+  /* Deep Navy Obsidian */
+  --foreground: #f1f5f9;
+  --muted: #0f172a;
+  --muted-foreground: #94a3b8;
+  --border: #1e293b;
+  --card: #0b1120;
+  --card-foreground: #f1f5f9;
+  --grad-surface: linear-gradient(to bottom right, rgba(30, 41, 59, 0.5), rgba(15, 23, 42, 0.5));
+}
+
+html {
+  background: var(--background);
+  color: var(--foreground);
 }
 
 body {
@@ -66,6 +69,7 @@ body {
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
   letter-spacing: -0.01em;
+  min-height: 100vh;
 }
 
 h1,
@@ -80,12 +84,14 @@ h4,
 .glass {
   background: var(--grad-surface);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border);
+  opacity: 0.8;
 }
 
 .dark .glass {
   background: rgba(15, 23, 42, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  opacity: 0.9;
 }
 
 .gradient-text {
