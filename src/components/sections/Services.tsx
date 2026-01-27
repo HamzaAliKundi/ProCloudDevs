@@ -1,7 +1,7 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Card } from '@/components/ui/Card';
 import { cn } from '@/lib/utils';
 import {
@@ -10,7 +10,9 @@ import {
     Globe,
     ShoppingCart,
     Search,
-    Headset
+    Headset,
+    Palette,
+    ChevronDown
 } from 'lucide-react';
 
 const services = [
@@ -45,12 +47,125 @@ const services = [
         color: "bg-accent/10 text-accent",
     },
     {
-        title: "Live Support Agents",
-        desc: "Our live support agents are available to assist your customers in real time. From handling inquiries to providing technical support, we help improve customer experience and build trust with your audience.",
+        title: "Graphic Design",
+        desc: "Need graphic design work? Whether it's a poster for your website, social media, or advertising, we've got you covered. Prices start from just £12 per poster. Need only one poster or multiple designs? No problem, we're here to help. Contact us today!",
+        icon: <Palette />,
+        color: "bg-pink-500/10 text-pink-500",
+    },
+    {
+        title: "Live Customer Support Team",
+        desc: "Are you looking to build or expand your live customer support team? If you need real human agents — not AI bots, we provide high-quality live support staff at guaranteed lower rates than your current provider, without compromising on performance or reliability.",
+        features: [
+            "Trained human support agents",
+            "24/7 coverage available",
+            "Fast onboarding",
+            "Scalable teams",
+            "Guaranteed cost savings",
+            "Proven performance & quality control"
+        ],
         icon: <Headset />,
         color: "bg-secondary/10 text-secondary",
     },
 ];
+
+function ServiceCard({ service, index }: { service: typeof services[0], index: number }) {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const hasLongContent = service.features || service.desc.length > 120;
+    const truncatedDesc = service.desc.length > 120 ? service.desc.substring(0, 120) + '...' : service.desc;
+    const showSeeMore = hasLongContent && !isExpanded;
+
+    return (
+        <Card delay={index * 0.1} className="h-full flex flex-col group py-12">
+            <div className={cn(
+                "w-16 h-16 rounded-3xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-2xl",
+                service.color
+            )}>
+                {React.cloneElement(service.icon as React.ReactElement, { size: 32 } as any)}
+            </div>
+            
+            {/* Fixed height for title */}
+            <div className="h-[4rem] mb-4">
+                <h3 className="text-2xl font-black group-hover:text-primary transition-colors duration-300 leading-tight">
+                    {service.title}
+                </h3>
+            </div>
+
+            {/* Fixed height for description section */}
+            <div className={cn("mb-6 flex flex-col", !isExpanded && "h-[8rem]")}>
+                <p className="text-muted-foreground text-base leading-relaxed">
+                    {showSeeMore ? (
+                        <>
+                            {truncatedDesc}
+                            {hasLongContent && (
+                                <button
+                                    onClick={() => setIsExpanded(!isExpanded)}
+                                    className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:opacity-80 transition-opacity duration-300 cursor-pointer ml-1"
+                                >
+                                    See more
+                                    <ChevronDown 
+                                        size={14} 
+                                        className="transition-transform duration-300" 
+                                    />
+                                </button>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            {service.desc}
+                            {hasLongContent && (
+                                <button
+                                    onClick={() => setIsExpanded(!isExpanded)}
+                                    className="text-sm font-bold text-primary inline-flex items-center gap-1 hover:opacity-80 transition-opacity duration-300 cursor-pointer ml-2"
+                                >
+                                    See less
+                                    <ChevronDown 
+                                        size={14} 
+                                        className={cn(
+                                            "transition-transform duration-300 rotate-180"
+                                        )} 
+                                    />
+                                </button>
+                            )}
+                        </>
+                    )}
+                </p>
+            </div>
+
+            {/* Features list - outside fixed height to prevent overlap */}
+            <AnimatePresence>
+                {isExpanded && service.features && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mb-6 overflow-hidden"
+                    >
+                        <ul className="space-y-2">
+                            {service.features.map((feature, idx) => (
+                                <li key={idx} className="flex items-start gap-3 text-muted-foreground">
+                                    <span className="text-primary font-black mt-1 text-sm">✓</span>
+                                    <span className="text-sm leading-relaxed">{feature}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {/* Fixed height for spacing when no See more button */}
+            {!hasLongContent && <div className="h-[2.5rem] mb-6"></div>}
+
+            {/* Fixed height for footer */}
+            <div className="h-[4rem] pt-8 border-t border-border flex items-center justify-between mt-auto">
+                <button className="text-sm font-black uppercase tracking-widest text-primary flex items-center gap-3 group/btn">
+                    Explore Service
+                    <div className="w-8 h-[2px] bg-primary group-hover/btn:w-12 transition-all duration-300" />
+                </button>
+            </div>
+        </Card>
+    );
+}
 
 export function Services() {
     return (
@@ -86,26 +201,7 @@ export function Services() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {services.map((service, index) => (
-                        <Card key={service.title} delay={index * 0.1} className="h-full flex flex-col group py-12">
-                            <div className={cn(
-                                "w-16 h-16 rounded-3xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-2xl",
-                                service.color
-                            )}>
-                                {React.cloneElement(service.icon as React.ReactElement, { size: 32 } as any)}
-                            </div>
-                            <h3 className="text-2xl font-black mb-4 group-hover:text-primary transition-colors duration-300">
-                                {service.title}
-                            </h3>
-                            <p className="text-muted-foreground text-lg leading-relaxed flex-grow">
-                                {service.desc}
-                            </p>
-                            <div className="mt-10 pt-8 border-t border-border flex items-center justify-between">
-                                <button className="text-sm font-black uppercase tracking-widest text-primary flex items-center gap-3 group/btn">
-                                    Explore Service
-                                    <div className="w-8 h-[2px] bg-primary group-hover/btn:w-12 transition-all duration-300" />
-                                </button>
-                            </div>
-                        </Card>
+                        <ServiceCard key={service.title} service={service} index={index} />
                     ))}
                 </div>
             </div>

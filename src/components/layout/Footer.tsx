@@ -31,11 +31,11 @@ export function Footer() {
                 <div>
                     <h4 className="font-bold mb-6 text-foreground">Services</h4>
                     <ul className="space-y-4 text-sm text-muted-foreground">
-                        <li><Link href="/services" className="hover:text-primary transition-colors">Web Development</Link></li>
-                        <li><Link href="/services" className="hover:text-primary transition-colors">Mobile App Development</Link></li>
-                        <li><Link href="/services" className="hover:text-primary transition-colors">Cloud Architecture</Link></li>
-                        <li><Link href="/services" className="hover:text-primary transition-colors">API Integrations</Link></li>
-                        <li><Link href="/services" className="hover:text-primary transition-colors">SaaS Solutions</Link></li>
+                        <li>Web Development</li>
+                        <li>Mobile App Development</li>
+                        <li>Cloud Architecture</li>
+                        <li>API Integrations</li>
+                        <li>SaaS Solutions</li>
                     </ul>
                 </div>
 
